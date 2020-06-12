@@ -32,7 +32,7 @@
 #include <boost/container/flat_map.hpp>
 #include <boost/thread/mutex.hpp>
 
-#if BOOST_VERSION < 10700
+#if BOOST_VERSION < 107000
 #   define AZMQ_DETAIL_USE_IO_SERVICE 1
 #else
 #   include <boost/asio/post.hpp>
@@ -96,7 +96,7 @@ namespace detail {
 #ifdef AZMQ_DETAIL_USE_IO_SERVICE
             void do_open(boost::asio::io_service & ios,
 #else
-            void do_open(boost::asio::io_context & ios,
+            void do_open(boost::asio::io_service & ios,
 #endif			 
                          context_type & ctx,
                          int type,
